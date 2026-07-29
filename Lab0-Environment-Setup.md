@@ -61,11 +61,17 @@ To install `kind` (Kubernetes IN Docker) alongside `kubectl` (the Kubernetes com
 Installing `kind` downloads a compiled binary that interacts with the local Docker daemon to bootstrap Kubernetes nodes from specific container images. Installing `kubectl` places the command-line utility in the PATH. The verification steps (`kind --version` and `kubectl version --client`) check the output for binary version validity. At this stage, these commands do not actively connect to a remote API server; instead, they simply validate that the client-side parsing libraries and authentication logic are intact and ready to interface with a Kubernetes control plane once initialized.
 
 ### Evidence
-![Install kind and kubectl](4.%20install%20kind%20and%20kubectl.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+Install kind and kubectl:
 
-![Verify kind and kubectl](5.%20verify%20kind%20&%20kubectl.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+<img width="802" height="185" alt="4  install kind and kubectl" src="https://github.com/user-attachments/assets/be95f2dd-bf13-4013-b554-9147288f9686" />
+
+
+
+Verify kind and kubectl:
+
+<img width="706" height="132" alt="5  verify kind   kubectl" src="https://github.com/user-attachments/assets/4f522b97-e0d6-4c92-ac6a-bb88e533640b" />
+
+
 
 ---
 
@@ -81,8 +87,10 @@ OpenSSL is a robust commercial-grade toolkit providing cryptography and secure c
 The installation package managers pull these cryptographic binaries and libraries and register them with the host's execution environment. When running the respective version checks, the system not only proves the software exists but verifies successful linking to internal cryptographic cipher suites (for OpenSSL) and valid time-hashing algorithm libraries (for `oathtool`). Behind the scenes, these checks guarantee that the tools are properly initialized to output pseudo-random entropy for certificate generation and mathematically compute precise time-synchronized MFA tokens.
 
 ### Evidence
-![Install and verify helper tools](6.%20install%20and%20verify%20helper%20tools.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+Install and verify helper tools: 
+
+<img width="805" height="235" alt="6  install and verify helper tools" src="https://github.com/user-attachments/assets/2e7b2e21-4cfe-491f-8af7-2c793e3aeab8" />
+
 
 ---
 
@@ -99,18 +107,27 @@ Starting LocalStack typically triggers an underlying Docker command to pull and 
 
 ### Evidence
 #### LocalStack
-![LocalStack check](8.%20LocalStack%20checked.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+LocalStack check:
 
-![LocalStack healthy](9.%20localstack%20healthy%20status%20and%20port%204566%20mapped.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+<img width="807" height="297" alt="8  LocalStack checked" src="https://github.com/user-attachments/assets/148dd87a-21a4-4aa3-bd76-636b3aa1b862" />
+
+
+LocalStack healthy:
+
+<img width="855" height="170" alt="9  localstack healthy status and port 4566 mapped" src="https://github.com/user-attachments/assets/1d6265e7-0ba3-4a22-b49e-86fcc0bb16a6" />
+
 
 #### Kubernetes Cluster
-![Create cluster](10.%20create%20cluster%20.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+Create cluster:
 
-![Cluster Verification](11.%20cluster%20was%20verified.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+<img width="562" height="312" alt="10  create cluster " src="https://github.com/user-attachments/assets/eaea3283-e855-4a47-ade2-6597dd07b74c" />
+
+
+Cluster Verification:
+
+<img width="862" height="260" alt="11  cluster was verified" src="https://github.com/user-attachments/assets/6f4e5812-c88c-4314-8aba-c65771fd8387" />
+
+
 
 ---
 
@@ -126,5 +143,7 @@ The AWS CLI determines authorization and routing by referencing credentials (Acc
 Running the interactive `aws configure` console program overrides or creates specific plain-text blocks within `~/.aws/credentials` and `~/.aws/config`. Behind the scenes, these inputs formulate a configuration profile (by default `[default]`). Subsequently, whenever an `aws` command is executed, the CLI reads these files, securely signs the HTTP payload utilizing the mock secret key via AWS Signature Version 4 mapping, and structures the request. By later combining this default profile with the `--endpoint-url` flag, the local DNS resolution bypasses standard AWS edge servers, redirecting the fully signed but dummy-authorized payload straight to the localized LocalStack Docker container port interceptor.
 
 ### Evidence
-![Configure AWS CLI](12.%20configure%20AWS%20CLI%20for%20LocalStack.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+Configure AWS CLI
+
+<img width="482" height="427" alt="12  configure AWS CLI for LocalStack" src="https://github.com/user-attachments/assets/6e0e19c3-c5cf-464b-8be8-d4c40e33e46b" />
+
