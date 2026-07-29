@@ -20,6 +20,7 @@ The installation involves downloading the Docker binaries or using a package man
 
 ### Evidence
 Install Docker:
+
 <img width="801" height="132" alt="1  install docker" src="https://github.com/user-attachments/assets/65c8123a-6ae5-4f3a-a721-2814fe1bd2a5" />
 
 
