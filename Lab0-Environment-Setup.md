@@ -19,8 +19,8 @@ Docker is a platform that uses OS-level virtualization to deliver software in pa
 The installation involves downloading the Docker binaries or using a package manager to install and configure the Docker daemon (`dockerd`). The verification command (e.g., executing `docker --version` or running a test container) communicates with the Docker daemon via a local API socket. This confirms that the daemon is actively running, network interfaces are correctly bound, and the engine is successfully authorized to pull and execute container images from a registry.
 
 ### Evidence
-![Install Docker](1.%20install%20docker.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+![Install Docker]<img width="801" height="132" alt="1  install docker" src="https://github.com/user-attachments/assets/65c8123a-6ae5-4f3a-a721-2814fe1bd2a5" />
+
 
 ---
 
