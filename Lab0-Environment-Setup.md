@@ -38,11 +38,14 @@ The AWS CLI is a unified tool used to manage AWS cloud services directly from th
 The execution process installs the pre-compiled AWS CLI v2 binary, placing the primary `aws` executable in the system's PATH. The verification command `aws --version` queries the executable to display the installed CLI version, the underlying Python context, and OS architecture specifics. Behind the scenes, this validates that cryptographic dependencies are correctly linked and the tool is primed to construct, sign, and reliably transmit secure REST API requests to AWS endpoints.
 
 ### Evidence
-![Install AWS CLI](2.%20install%20AWS%20CLI%20v2.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+Install AWS CLI: 
 
-![Verify AWS CLI](3.%20verify%20AWS%20CLI%20v2.png)
-*Evidence captured by Ameer Idris - 30 July 2026*
+<img width="822" height="172" alt="2  install AWS CLI v2" src="https://github.com/user-attachments/assets/bf0f341a-a029-4ba3-ab54-55de499c8936" />
+
+
+Verify AWS CLI:
+
+<img width="821" height="87" alt="3  verify AWS CLI v2" src="https://github.com/user-attachments/assets/ce011cb5-473f-4377-885a-11e65e90a9ba" />
 
 ---
 
