@@ -70,9 +70,12 @@ EP='--endpoint-url=http://localhost:4566'
 This means AWS CLI commands were sent to the local LocalStack endpoint instead of real AWS.
 
 Evidence:
-![start localstack](1.%20start%20localstack.png)
-![confirm localstack is healty](2.%20confirm%20localstack%20is%20healty.png)
-![create shell variable](3.create%20shell%20variable.png)
+![start localstack](<img width="510" height="76" alt="1  start localstack" src="https://github.com/user-attachments/assets/54353e8b-5cce-439a-9d24-7046af9a7c3d" />
+)
+![confirm localstack is healty](<img width="856" height="282" alt="2  confirm localstack is healty" src="https://github.com/user-attachments/assets/b8e0408b-93cc-4a31-86a3-c4a6697faee7" />
+)
+![create shell variable](<img width="552" height="65" alt="3 create shell variable" src="https://github.com/user-attachments/assets/6be96987-99f0-4e6f-9895-927db3869250" />
+)
 
 Verification command:
 
@@ -116,7 +119,8 @@ aws $EP iam attach-group-policy --group-name Admins \
 ```
 
 Evidence:
-![see all listed policies attached](4.%20see%20all%20listed%20policies%20attached.png)
+![see all listed policies attached](<img width="595" height="222" alt="4  see all listed policies attached" src="https://github.com/user-attachments/assets/764b75c4-8525-4374-88d6-25b41b85b90b" />
+)
 
 Verification command:
 
@@ -140,7 +144,8 @@ Output:
 This proves that the `AdministratorAccess` policy was attached to the `Admins` group.
 
 Evidence:
-![aws list attached group policies](5.%20aws%20lkist%20attached%20group%20policies.png)
+![aws list attached group policies](<img width="615" height="97" alt="5  aws lkist attached group policies" src="https://github.com/user-attachments/assets/20de862f-0cea-4251-8c7a-aa3fa7332258" />
+)
 
 
 ### Step 2.3: Create Personal Admin User
@@ -157,7 +162,8 @@ Result:
 The user was created successfully.
 
 Evidence:
-![create your personal admin user](6.%20create%20your%20personal%20admin%20user.png)
+![create your personal admin user](<img width="720" height="236" alt="6  create your personal admin user" src="https://github.com/user-attachments/assets/ee14a0e2-805e-4ef4-ae31-8248cd22595d" />
+)
 
 ### Step 2.4: Add User to Admins Group and Verify Membership
 
@@ -169,7 +175,8 @@ aws $EP iam add-user-to-group --group-name Admins \
 ```
 
 Evidence:
-![put user in the group](7.%20put%20user%20in%20the%20group.png)
+![put user in the group](<img width="596" height="85" alt="7  put user in the group" src="https://github.com/user-attachments/assets/8661672d-caac-408c-abb6-6353d8a68ddb" />
+)
 
 Verification command:
 
@@ -197,7 +204,8 @@ Output summary:
 This proves that the personal admin is a member of the `Admins` group. The admin permission is inherited from the group rather than attached directly to the user.
 
 Evidence:
-![verify the membership](8.%20verify%20the%20membership.png)
+![verify the membership](<img width="790" height="417" alt="8  verify the membership" src="https://github.com/user-attachments/assets/3ff19975-d065-48c9-b2c0-0885c10c82f0" />
+)
 
 ## Task 3: Enforce Least Privilege with a Scoped Policy
 
@@ -214,7 +222,8 @@ Result:
 The user was created successfully.
 
 Evidence:
-![create read only user](9.%20create%20read%20only%20user.png)
+![create read only user](<img width="673" height="242" alt="9  create read only user" src="https://github.com/user-attachments/assets/738bb07c-1d0c-4b19-9ce3-48f3d5f41c90" />
+)
 
 ### Step 3.2: Attach S3 Read-Only Policy
 
@@ -226,7 +235,8 @@ aws $EP iam attach-user-policy --user-name Analyst_jiha \
 ```
 
 Evidence:
-![attach a scoped , read only policy](10.%20attach%20a%20scoped%20,%20read%20only%20policy.png)
+![attach a scoped , read only policy](<img width="685" height="83" alt="10  attach a scoped , read only policy" src="https://github.com/user-attachments/assets/f79c59af-82bc-41b7-83c4-30043bf82a37" />
+)
 
 ### Step 3.3: Verify Analyst Permissions
 
@@ -252,7 +262,8 @@ Output:
 This proves that the analyst only has the `AmazonS3ReadOnlyAccess` policy attached.
 
 Evidence:
-![list what the user can do](11.%20list%20what%20the%20user%20can%20do.png)
+![list what the user can do](<img width="778" height="213" alt="11  list what the user can do" src="https://github.com/user-attachments/assets/f277f800-3b9b-4659-8460-a76ad66ef6cd" />
+)
 
 ### Least Privilege Explanation
 
@@ -276,7 +287,8 @@ Result:
 An access key was created for the analyst.
 
 Evidence:
-![create an access key for the ananlyst](12.%20create%20an%20access%20key%20for%20the%20ananlyst.png)
+![create an access key for the ananlyst](<img width="730" height="246" alt="12  create an access key for the ananlyst" src="https://github.com/user-attachments/assets/70ebb17b-c862-4ce0-901c-430ad722e494" />
+)
 
 Security note: the secret access key is not repeated in this report. In real cloud environments, access keys must not be committed to repositories, shared in screenshots or stored in plaintext.
 
@@ -304,7 +316,8 @@ Output:
 ```
 
 Evidence:
-![list access key](13.%20list%20access%20key.png)
+![list access key](<img width="732" height="265" alt="13  list access key" src="https://github.com/user-attachments/assets/0424accf-ce53-4ab5-8f99-a5164d24a031" />
+)
 
 ### Step 4.3: Rotate and Deactivate Old Key
 
@@ -336,9 +349,12 @@ Result:
 The local kind cluster `ccse-lab1` was created and kubectl was configured to use context `kind-ccse-lab1`.
 
 Evidence:
-![Create a throwaway cluster](14.%20Create%20a%20throwaway%20cluster.png)
-![Confirm it is up 1](15.%20Confirm%20it%20is%20up%201.png)
-![Confirm it is up 2](16.%20Confirm%20it%20is%20up%202.png)
+![Create a throwaway cluster](<img width="857" height="335" alt="14  Create a throwaway cluster" src="https://github.com/user-attachments/assets/12aa1ab3-5dae-4fab-807e-db8e9c00b3d3" />
+)
+![Confirm it is up 1](<img width="865" height="113" alt="15  Confirm it is up 1" src="https://github.com/user-attachments/assets/baa355f5-b95a-426e-bea0-c18e85127b67" />
+)
+![Confirm it is up 2](<img width="865" height="113" alt="16  Confirm it is up 2" src="https://github.com/user-attachments/assets/d8d83674-a94e-4816-b850-2c35bceb8753" />
+)
 
 ## Task 5: Separate Environments with Namespaces
 
@@ -355,7 +371,8 @@ Result:
 The namespaces `dev` and `prod` were created and listed as `Active`.
 
 Evidence:
-![Separate Environments with Namespaces](17.%20Separate%20Environments%20with%20Namespaces.png)
+![Separate Environments with Namespaces](<img width="855" height="286" alt="17  Separate Environments with Namespaces" src="https://github.com/user-attachments/assets/47a14672-b4a7-4305-885b-1c7b1503eacf" />
+)
 
 ## Task 6: Define a Role and Bind It
 
@@ -372,7 +389,8 @@ Result:
 The service account `dev-user` was created in the `dev` namespace.
 
 Evidence:
-![Create Service Account](18.%20Create%20Service%20Account.png)
+![Create Service Account](<img width="862" height="73" alt="18  Create Service Account" src="https://github.com/user-attachments/assets/2a56848b-21e5-4cd1-b3a4-d498ec1138d4" />
+)
 
 ### Step 6.2: Create Pod Reader Role
 
@@ -388,7 +406,8 @@ Result:
 The Role `pod-reader` was created in the `dev` namespace. It allows only `get`, `list` and `watch` actions on pods.
 
 Evidence:
-![Create Pod Reader Role](19.%20Create%20Pod%20Reader%20Role.png)
+![Create Pod Reader Role](<img width="860" height="92" alt="19  Create Pod Reader Role" src="https://github.com/user-attachments/assets/3d1d16b4-e5b5-46c2-b198-66c7b6f4b747" />
+)
 
 ### Step 6.3: Create RoleBinding
 
@@ -404,7 +423,8 @@ Result:
 The RoleBinding `dev-user-binding` binds the `pod-reader` Role to the `dev-user` service account.
 
 Evidence:
-![Create RoleBinding](20.%20Create%20RoleBinding.png)
+![Create RoleBinding](<img width="862" height="97" alt="20  Create RoleBinding" src="https://github.com/user-attachments/assets/4e7e7fca-4e40-4736-b515-f19f1b0a71f3" />
+)
 
 ## Task 7: Test Access Control
 
@@ -417,7 +437,8 @@ SA=system:serviceaccount:dev:dev-user
 This represents the Kubernetes service account `dev-user` in the `dev` namespace.
 
 Evidence:
-![test access control](21.%20test%20access%20control.png)
+![test access control](<img width="861" height="57" alt="21  test access control" src="https://github.com/user-attachments/assets/6241ef24-df61-444f-b074-0ce02d3bc66b" />
+)
 
 ### Test 1: List Pods in Dev
 
@@ -438,7 +459,8 @@ Explanation:
 The service account can list pods in `dev` because the `pod-reader` Role allows `list` on pods in the `dev` namespace.
 
 Evidence:
-![list pod in dev](22.%20list%20pod%20in%20dev.png)
+![list pod in dev](<img width="867" height="62" alt="22  list pod in dev" src="https://github.com/user-attachments/assets/04e34b6a-93dd-4053-a19a-4e3ee4b4a8c0" />
+)
 
 ### Test 2: Delete Pods in Dev
 
@@ -459,7 +481,8 @@ Explanation:
 The service account cannot delete pods because the Role only grants `get`, `list` and `watch`. Delete permission was not granted.
 
 Evidence:
-![delete pods in dev](23.%20delete%20pods%20in%20dev.png)
+![delete pods in dev](<img width="861" height="72" alt="23  delete pods in dev" src="https://github.com/user-attachments/assets/f6a36e64-17ab-4b22-a28c-66130ff8082c" />
+)
 
 ### Test 3: List Pods in Prod
 
@@ -480,7 +503,8 @@ Explanation:
 The service account cannot list pods in `prod` because the Role and RoleBinding are namespaced to `dev`. The permission does not extend to the `prod` namespace.
 
 Evidence:
-![list pods in prod](24.%20list%20pods%20in%20prod.png)
+![list pods in prod](<img width="863" height="66" alt="24  list pods in prod" src="https://github.com/user-attachments/assets/adb3fe7a-2184-4902-9afa-a1c050743852" />
+)
 
 ### Authentication vs Authorization
 
@@ -521,7 +545,8 @@ subjects:
 
 Evidence:
 
-![RBAC verification command](25.%20RBAC%20verification%20command.png)
+![RBAC verification command](<img width="857" height="362" alt="25  RBAC verification command" src="https://github.com/user-attachments/assets/62805017-3c13-4fa1-b471-999842d59df9" />
+)
 
 This confirms that the `dev-user-binding` RoleBinding connects the `dev-user` service account to the `pod-reader` Role in the `dev` namespace.
 
