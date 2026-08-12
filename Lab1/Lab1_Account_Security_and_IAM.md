@@ -1,9 +1,13 @@
 ## Course Information
 ---
 *Course:* IKB42603 Cloud Computing Security Essentials
+
 *Lab:* Lab1_Account_Security_and_IAM
+
 *Name:* MUHAMMAD AMEER BIN IDRIS
+
 *Student ID:* 52215124748
+
 *Date:* 4 August 2026
 
 # Lab 1: Cloud Account Security, Identity and Access Management
