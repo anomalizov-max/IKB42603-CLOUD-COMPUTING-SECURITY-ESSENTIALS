@@ -1,9 +1,13 @@
 ## Course Information
 ---
 *Course:* IKB42603 Cloud Computing Security Essentials
+
 *Lab:* Lab 0 - Environment Setup
+
 *Name:* MUHAMMAD AMEER BIN IDRIS
-*Date:* 30 July 2026
+
+*Date:* 13 August 2026
+
 
 # Lab 2: Secure Isolation and Multi-Tenancy
 
