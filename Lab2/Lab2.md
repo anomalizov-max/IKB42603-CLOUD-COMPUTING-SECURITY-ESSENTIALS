@@ -2,7 +2,7 @@
 ---
 *Course:* IKB42603 Cloud Computing Security Essentials
 
-*Lab:* Lab 0 - Environment Setup
+*Lab:* Lab2
 
 *Name:* MUHAMMAD AMEER BIN IDRIS
 
