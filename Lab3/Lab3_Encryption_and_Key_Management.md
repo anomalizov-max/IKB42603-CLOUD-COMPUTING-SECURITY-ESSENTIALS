@@ -1,9 +1,13 @@
 ## Course Information
 ---
 **Course:** IKB42603 Cloud Computing Security Essentials
+
 **Lab:** Encryption and Key Management
+
 **Name:** MUHAMMAD AMEER BIN IDRIS
+
 **Student ID::** 52215124748
+
 **Date:** 24 August 2026
 
 # Lab 3: Encryption and Key Management  
