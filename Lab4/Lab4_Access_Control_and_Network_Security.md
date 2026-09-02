@@ -334,9 +334,8 @@ Reduce the container’s privilege and writable attack surface, then check the c
 
    Trivy completed its database download and reported vulnerabilities for `nginx:alpine` in the captured scan summary.
    
-   <img width="857" height="857" alt="17 2_Scan_an_image_for_known_vulnerabilities" src="https://github.com/user-attachments/assets/addaf882-2e56-4cb9-829e-d3250888380d" />
 <img width="856" height="768" alt="17 1_Scan_an_image_for_known_vulnerabilities" src="https://github.com/user-attachments/assets/92252a00-f467-4810-8501-19ea89ca3ccc" />
- 
+ <img width="857" height="857" alt="17 2_Scan_an_image_for_known_vulnerabilities" src="https://github.com/user-attachments/assets/addaf882-2e56-4cb9-829e-d3250888380d" />
 
 ### Hardening measures and attacks mitigated
 
