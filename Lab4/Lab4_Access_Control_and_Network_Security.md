@@ -1,10 +1,15 @@
 ## Course Information
 ---
 **Course:** IKB42603 Cloud Computing Security Essentials
+
 **Lab:** Lab 4 — Access Control and Network Security
+
 **Name:** MUHAMMAD AMEER BIN IDRIS
+
 **Student ID::** 52215124748
+
 **Date:** 02 September 2026
+
 
 # Lab 4 — Access Control and Network Security
 
@@ -40,7 +45,8 @@ HTTP Basic authentication was used to ensure that only a caller presenting valid
 
    The command downloaded the `httpd:alpine` image and created the password file successfully.
    
-   ![Evidence 1](Evidence/1._Create_a_password_file.png)
+   <img width="851" height="294" alt="1 _Create_a_password_file" src="https://github.com/user-attachments/assets/2e79acab-b5b1-4a38-8028-d15a1dc7ab7d" />
+
 
 3. Create an Nginx configuration that protects `/` with Basic authentication and uses `/etc/nginx/.htpasswd` as the credential store.
 
@@ -57,7 +63,8 @@ HTTP Basic authentication was used to ensure that only a caller presenting valid
 
    The configuration was created as `default.conf`.
    
-   ![Evidence 2](Evidence/2._The_configuration_was_created_as_default.conf.png)
+   <img width="841" height="141" alt="2 _The_configuration_was_created_as_default conf" src="https://github.com/user-attachments/assets/8849a401-0eb4-4c89-9929-7457f4325375" />
+
 
 5. Run Nginx, bind host port `8080` to port `80`, and mount both configuration files read-only from the working directory.
 
@@ -69,7 +76,8 @@ HTTP Basic authentication was used to ensure that only a caller presenting valid
 
    The `authsvc` container started.
    
-   ![Evidence 3](Evidence/3._bind_host_port_8080_to_port_80.png)
+<img width="853" height="111" alt="3 _bind_host_port_8080_to_port_80" src="https://github.com/user-attachments/assets/51163432-f883-4243-8683-1d76315b666e" />
+
 
 7. Test access without credentials.
 
@@ -79,7 +87,8 @@ HTTP Basic authentication was used to ensure that only a caller presenting valid
 
    **Result:** `no-creds: 401`. The server rejected the unauthenticated request.  
 
-   ![Evidence 4](Evidence/4._Test_access_without_credentials..png)
+  <img width="857" height="66" alt="4 _Test_access_without_credentials" src="https://github.com/user-attachments/assets/076a0ecb-003f-4902-9990-e9ee90285c3e" />
+
 
 9. Test access with the valid lab credentials.
 
@@ -89,7 +98,8 @@ HTTP Basic authentication was used to ensure that only a caller presenting valid
 
    **Result:** `Authenticated OK`, which corresponds to HTTP 200.
    
-   ![Evidence 5](Evidence/5._Test_access_with_the_valid_lab_credentials.png)
+  <img width="849" height="66" alt="5 _Test_access_with_the_valid_lab_credentials" src="https://github.com/user-attachments/assets/19836a02-6748-4be8-9800-74ead162bb79" />
+
 
 ### Security outcome
 
@@ -114,7 +124,8 @@ This task adds a time-based one-time password (TOTP), representing a second fact
 
    A secret was generated and enrolment information displayed. (Also generated the current 6-digit code).
    
-   ![Evidence 6](Evidence/6._Create_a_shared_secret_base32_and_generate_the_current_6-digit_code.png)
+ <img width="857" height="142" alt="6 _Create_a_shared_secret_base32_and_generate_the_current_6-digit_code" src="https://github.com/user-attachments/assets/49e9c12d-c6b0-4b4d-804a-804cd3bbbd17" />
+
 
 3. Generate the current six-digit TOTP value, and validate an entered code against the current expected TOTP.
 
@@ -134,7 +145,8 @@ This task adds a time-based one-time password (TOTP), representing a second fact
 
    Valid and invalid codes were verified.
    
-   ![Evidence 7](Evidence/7._Validate_a_code_the_user_types.png)  
+ <img width="854" height="141" alt="7 _Validate_a_code_the_user_types" src="https://github.com/user-attachments/assets/3320a055-3521-42e7-906e-0f4df5ae2761" />
+ 
 
 ### Security outcome
 
@@ -160,7 +172,8 @@ RBAC applies least privilege to an authenticated Kubernetes service account: it 
 
    The cluster, namespace, and service account were created.
    
-   ![Evidence 8](Evidence/8._create_cluster.png)
+  <img width="862" height="510" alt="8 _create_cluster" src="https://github.com/user-attachments/assets/7d5d8f6a-514f-41f5-b551-b41ed63205f5" />
+
 
 3. Create a Role restricted to `get` and `list` verbs on `pods`, then bind it to the service account.
 
@@ -172,7 +185,8 @@ RBAC applies least privilege to an authenticated Kubernetes service account: it 
 
    The role and role binding were created.
    
-   ![Evidence 9](Evidence/9._Developer_may_only_read_pods.png)
+  <img width="864" height="178" alt="9 _Developer_may_only_read_pods" src="https://github.com/user-attachments/assets/86aa5f9a-570c-4618-835e-1b5272e52ad8" />
+
 
 5. Test the permissions as the service account.
 
@@ -185,7 +199,8 @@ RBAC applies least privilege to an authenticated Kubernetes service account: it 
 
    All three results correspond to their effective bounds: List pods (yes), Create deployment (no), Delete pods (no).
    
-   ![Evidence 10](Evidence/10._Test_the_permissions_as_the_service_account..png)
+  <img width="846" height="294" alt="10 _Test_the_permissions_as_the_service_account" src="https://github.com/user-attachments/assets/57378653-ecc9-4b9b-a165-ad5f95211c28" />
+
 
 ### Verification command
 
@@ -214,7 +229,8 @@ Separate the internet-facing web tier, application tier, and database tier so th
 
    Both networks were created.
    
-   ![Evidence 11](Evidence/11._Create_two_segmented_networks.png)
+<img width="857" height="155" alt="11 _Create_two_segmented_networks" src="https://github.com/user-attachments/assets/0f664c00-417c-4c89-a5e0-b60b3a8aebff" />
+
 
 3. Attach the database only to `backend-net`; attach the application to `backend-net` and then `frontend-net`; attach the web container only to `frontend-net`.
 
@@ -227,8 +243,8 @@ Separate the internet-facing web tier, application tier, and database tier so th
 
    The containers and network attachment were created.
    
-   ![Evidence 12](Evidence/12._DB_only_on_backend-net_app_on_both_web_only_on_frontend-net.png)
-   ![Evidence 12.1](Evidence/12.1_DB_only_on_backend-net_app_on_both_web_only_on_frontend-net.png)
+   <img width="863" height="538" alt="12 1_DB_only_on_backend-net_app_on_both_web_only_on_frontend-net" src="https://github.com/user-attachments/assets/719a5fe9-c801-41d4-b044-bb850dbd9d2e" />
+
 
 5. Test the prohibited and permitted frontend-to-database connections.
 
@@ -239,7 +255,8 @@ Separate the internet-facing web tier, application tier, and database tier so th
 
    **Expected result:** `web` to `db` fails (`BLOCKED`), but `app` to `db` succeeds.
    
-   ![Evidence 13](Evidence/13._web_-_db_should_FAIL_and_app_-db_should_WORK.png)
+ <img width="855" height="231" alt="13 _web_-_db_should_FAIL_and_app_-db_should_WORK" src="https://github.com/user-attachments/assets/157d84ab-f481-49c2-ad16-5e2cc79eae9d" />
+
 
 ---
 
@@ -264,7 +281,8 @@ Model a cloud security group with a deny-by-default inbound policy and only the 
 
 2. The displayed ruleset had **INPUT policy `DROP`**, plus an `ACCEPT` rule for TCP destination port 443 and an `ACCEPT` rule for all loopback traffic.
    
-   ![Evidence 14](Evidence/14._Inside_a_throwaway_container_with_iptables.png)
+<img width="856" height="239" alt="14 _Inside_a_throwaway_container_with_iptables" src="https://github.com/user-attachments/assets/69fe2949-e0f2-433c-8b50-bad2528e8ee6" />
+
 
 ### Security outcome
 
@@ -294,8 +312,8 @@ Reduce the container’s privilege and writable attack surface, then check the c
 
    The hardened container started from `nginxinc/nginx-unprivileged`.
    
-   ![Evidence 15](Evidence/15._A_hardened_run_of_a_service.png)
-   ![Evidence 15.1](Evidence/15.1_A_hardened_run_of_a_service.png)
+   <img width="862" height="464" alt="15 1_A_hardened_run_of_a_service" src="https://github.com/user-attachments/assets/cdaeae6c-ba80-43bd-9de0-d7177ae4fb34" />
+
 
 3. Inspect the configuration.
 
@@ -305,7 +323,8 @@ Reduce the container’s privilege and writable attack surface, then check the c
 
    **Observed result:** `User=1000:1000` and `ReadOnly=true`  
    
-   ![Evidence 16](Evidence/16._docker_inspect_hardened.png)
+   <img width="852" height="97" alt="16 _docker_inspect_hardened" src="https://github.com/user-attachments/assets/f3149877-7071-4111-acfa-982e1d6fc144" />
+
 
 5. Scan the Nginx Alpine image for known high and critical vulnerabilities.
 
@@ -315,8 +334,9 @@ Reduce the container’s privilege and writable attack surface, then check the c
 
    Trivy completed its database download and reported vulnerabilities for `nginx:alpine` in the captured scan summary.
    
-   ![Evidence 17.1](Evidence/17.1_Scan_an_image_for_known_vulnerabilities.png)  
-   ![Evidence 17.2](Evidence/17.2_Scan_an_image_for_known_vulnerabilities.png)  
+   <img width="857" height="857" alt="17 2_Scan_an_image_for_known_vulnerabilities" src="https://github.com/user-attachments/assets/addaf882-2e56-4cb9-829e-d3250888380d" />
+<img width="856" height="768" alt="17 1_Scan_an_image_for_known_vulnerabilities" src="https://github.com/user-attachments/assets/92252a00-f467-4810-8501-19ea89ca3ccc" />
+ 
 
 ### Hardening measures and attacks mitigated
 
@@ -374,7 +394,8 @@ docker network rm frontend-net backend-net 2>/dev/null
 kind delete cluster --name ccse-lab4
 ```
 
-![Evidence 18](Evidence/18._Cleanup_and_Teardown.png)  
+<img width="828" height="250" alt="18 _Cleanup_and_Teardown" src="https://github.com/user-attachments/assets/44d49993-36ee-4ad6-b6ce-84b6d97aba92" />
+
 
 This removed the containers, Docker networks, and the `ccse-lab4` Kind cluster.
 
