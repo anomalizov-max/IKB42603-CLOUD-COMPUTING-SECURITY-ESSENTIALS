@@ -24,15 +24,18 @@ At the end of this lab, the objectives were to:
 
 ### Setup — Start LocalStack
 To begin the lab, we instantiated a local mock AWS cloud environment using LocalStack within a Docker container. This establishes an endpoint (port 4566) mimicking actual AWS cloud capabilities. Then, utilizing the AWS CLI, we successfully initialized a new CloudWatch log group (`/ccse/app`) and a designated `auth` log stream, providing us with the foundation needed for cloud-based telemetry storage.
+
 ![1. Setup - Start LocalStack](Evidence/1.%20Setup%20-%20Start%20LocalStack.png)
 ![2. Start LocalStack](Evidence/2.%20Start%20LocalStack.png)
 
 ### Task 1 — Generate Application Logs
 In this task, we simulated a realistic authentication sequence by writing a custom structured text log into an `auth.log` file. This log includes a normal login, but more importantly, it tracks a suspected threat actor systematically probing the application from a remote IP (`203.0.113.9`). By manually assembling events across a targeted timeline, we emulated how typical applications record both failed and successful user interactions along with highly sensitive actions like massive data exports (e.g., `500MB`). This laid the groundwork for event correlation in later tasks.
+
 ![3. Generate Application Logs](Evidence/3.%20Generate%20Application%20Logs.png)
 
 ### Task 2 — Centralise Logs (Ship to CloudWatch)
 Keeping security events securely backed up is a critical practice to avoid manipulation by an attacker. Rather than retaining the raw `auth.log` unprotected precisely where an application executes, we iteratively pushed each authentication record directly into our previously established LocalStack CloudWatch Logs stream. Applying the CLI's `put-log-events` command simulated translating unmanaged, localized plain-text metrics into durable cloud-based telemetry that can be safely preserved and heavily queried on demand. We further verified this by retrieving the deployed logs back using the `get-log-events` directive.
+
 ![4. Centralise Logs](Evidence/4.%20Centralise%20Logs.png)
 ![5. Read them back from the central store](Evidence/5.%20Read%20them%20back%20from%20the%20central%20store.png)
 
@@ -45,6 +48,7 @@ With our centralized architecture populated, we employed standard Linux shell qu
 
 ### Task 4 — Tamper-Proof (Hash-Chained) Logs
 An accomplished adversary's first post-exploitation objective is often modifying audit trails (e.g., downgrading an export record from 500MB to merely 5MB to evade data loss alarms). To combat this, we enforced security auditing integrity by structuring the historical log entries into a cryptographic hash chain. Utilizing SHA256 algorithms, each new event mathematically intertwines with the checksum of the preceding entry. Modifying a completed entry logically fractures the sequence at the point of alteration, providing concrete forensic proof that the environment was compromised and generating a mismatched final output hash.
+
 ![6. Tamper-Proof (Hash-Chained) Logs](Evidence/6.%20Tamper-Proof%20(Hash-Chained)%20Logs.png)
 ![7. change the EXPORT size, re-verify, and watch the chain break](Evidence/7.%20change%20the%20EXPORT%20size,%20re-verify,%20and%20watch%20the%20chain%20break.png)
 
@@ -100,7 +104,9 @@ Logs centrally shipped (e.g. CloudWatch) allow real-time SIEM systems to scrutin
 
 ## Verification Command
 Executed the final verification commands successfully to fetch CloudWatch log statuses and compare final SHA256 signature chains.
+
 ![12. Verification Command](Evidence/12.%20Verification%20Command.png)
 
 ## Cleanup & Teardown
+
 ![13. Cleanup & Teardown](Evidence/13.%20Cleanup%20&%20Teardown.png)
