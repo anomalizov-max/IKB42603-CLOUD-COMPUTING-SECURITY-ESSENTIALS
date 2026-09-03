@@ -1,9 +1,13 @@
 ## Course Information
 ---
 **Course:** IKB42603 Cloud Computing Security Essentials
+
 **Lab:** Lab 5: Monitoring, Logging & Incident Detection
+
 **Name:** MUHAMMAD AMEER BIN IDRIS
+
 **Student ID:** 52215124748
+
 **Date:** 04 September 2026
 
 ## Lab Learning Outcomes
@@ -46,6 +50,7 @@ An accomplished adversary's first post-exploitation objective is often modifying
 
 ### Task 5 — Detect the Incident (Correlation)
 In isolation, no single activity independently screams absolute danger; failing passwords happen to normal individuals frequently, and successful administrative exports are similarly expected actions. However, we simulated how modern SIEM (Security Information and Event Management) tools function by aggressively correlating chronologies. We mapped a tight timeline tracking repeated `LOGIN_FAIL` variables mapped strictly against the threat actor's IP, seamlessly linking them sequentially to an authorized `LOGIN_OK` and an unprecedented `EXPORT_DATA` command. Measuring these concurrent dependencies generated a high-priority, automated incident response alert for "probable brute-force -> compromise -> data exfiltration."
+
 ![8. Detect the Incident](Evidence/8.%20Detect%20the%20Incident.png)
 ![9. Detect the Incident](Evidence/9.%20Detect%20the%20Incident.png)
 
@@ -53,10 +58,12 @@ In isolation, no single activity independently screams absolute danger; failing 
 Once the automated correlation systems firmly validated the malicious intrusion, we simulated emergency incident response handling.
 **Containment (IP Block via iptables):**
 We aggressively severed ongoing external connectivity and contained the exfiltration leak by executing an active `iptables` drop rule within a Docker environment, completely blackholing additional ingress traffic matching the offending IP (`203.0.113.9`).
+
 ![10. block the attacker IP (model with an iptables rule)](Evidence/10.%20block%20the%20attacker%20IP%20(model%20with%20an%20iptables%20rule).png)
 
 **Evidence Collection:**
 Simultaneously, we initiated forensic preservation operations. We firmly cloned the remaining uncompromised original authentication logs directly into an immutable, timestamped file structure while concurrently storing a verified one-way SHA256 encryption checksum to provide unquestioned proof regarding integrity before continuing further remediation processes.
+
 ![11. make an immutable, timestamped evidence copy with its hash](Evidence/11.%20make%20an%20immutable,%20timestamped%20evidence%20copy%20with%20its%20hash.png)
 
 ---
